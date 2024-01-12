@@ -1,0 +1,23 @@
+footer{
+    padding: 75px 0;
+    background-color: #fff;
+    ul{
+        li{
+            span{
+                display: block;
+                margin-bottom: 12px;
+                font-weight: bold;
+            }
+            a{
+                color: #333;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: normal;
+                padding: 10px 0;
+                transition: 0.2s;
+                display: block;
+
+            }
+        }
+    }
+}

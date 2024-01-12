@@ -1,0 +1,167 @@
+.about {
+    background-color: #fff;
+    padding: 75px 0;
+
+    p {
+        padding-top: 30px;
+    }
+}
+
+.skill-bar {
+    position: relative;
+
+
+    li {
+        width: 100%;
+        background-color: #1a1a1a;
+        height: 15px;
+        border-radius: 6px;
+        opacity: 0.7;
+        position: relative;
+        margin-top: 40px;
+
+
+        &::before {
+            width: 0;
+            border-radius: 6px;
+            left: 0;
+            top: 0;
+            content: '';
+            position: absolute;
+            height: 15px;
+            background-color: #1DA547;
+            animation: fillBar 2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+            animation-delay: 0.3s;
+        }
+
+        span {
+            display: flex;
+            justify-content: end;
+            position: absolute;
+            z-index: 4;
+            right: 0;
+            top: -30px;
+            animation: opa 2s forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+            font-weight: 700;
+
+            &:nth-child(2) {
+
+                animation-delay: 1s;
+            }
+
+            &:nth-child(3) {
+
+                animation-delay: 1.5s;
+            }
+        }
+
+        i {
+            display: flex;
+            justify-content: end;
+            position: absolute;
+            z-index: 4;
+            left: 0;
+            top: -30px;
+            font-weight: 500;
+
+        }
+
+        &:nth-child(2)::before {
+            animation-delay: 1s;
+        }
+
+        &:nth-child(3)::before {
+            animation-delay: 1.5s;
+        }
+    }
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+
+
+@keyframes opa {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.social {
+    gasp: 20px;
+
+    li {
+        a {
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}
+
+.vizyon{
+    padding: 30px 0;
+    background-color: #fff;
+    position: relative;
+    &::before{
+        width: 100%;
+        height: 2px;
+        background-color: #d9d9d9;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        content: '';
+
+    }
+    ul{
+        display: flex;
+        justify-content: start;
+        gap: 30px;
+        li{
+            a{
+                color: #333;
+                font-size: 25px;
+                font-weight: bold;
+                line-height: normal;
+                opacity: 0.7;
+                transition: 0.2s;
+                position: relative;
+                &::before{
+                    left: 0;
+                    bottom: -20px;
+                    background-color: #1DA547;
+                    width: 100%;
+                    content: '';
+                    position: absolute;
+                    height: 2px;
+                    opacity: 0;
+                }
+                
+            }
+        }
+    }
+}
+
+.vizyon-tab li.active a::before{
+    opacity: 1;
+}
+
+
+.vizyon-tab li.active a{
+    opacity: 1;
+}

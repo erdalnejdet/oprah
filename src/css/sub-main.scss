@@ -1,0 +1,167 @@
+.sub-main{
+
+    padding-bottom: 75px;
+    padding-top: 48px;
+
+    background-color: #fff;
+    position: relative;
+    .container{
+        
+    }
+    h1{
+        color: #fff;
+       
+        font-size: 40px;
+
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 35px;
+        li{
+            position: relative;
+         padding-right: 20px;
+            &::after{
+                content: "";
+                width: 10px;
+                height: 10px;
+                margin: auto 0;
+                border-top: 1.5px solid #fff;
+                border-right: 1.5px solid #fff;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+               position: absolute;
+               right: 0;
+               top: 0;
+               bottom: 0;
+
+            }
+            a{
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: normal;
+                opacity: 0.8;
+            }
+            &:last-of-type{
+                &::after{
+                    display: none;
+                }
+            }
+            span{
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.sub-bg{
+    background-color: #1DA547;
+    padding: 52px;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    &::before{
+        content: '';
+        background-image: url(../img/oprah.svg);
+        width: 303px;
+        bottom: 0;
+        height: 100%;
+        right: 30px;
+        top: 0;
+       background-position: bottom;
+  
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: -1;
+        position: absolute;
+    }
+}
+
+.hizmet{
+    background-color: #fff;
+   
+    &-detay{
+        p{
+            padding: 15px 0;
+        }
+        h3{
+            color:rgba(51,51,51,.8);
+            padding: 15px 0;
+        }
+        img{
+            border-radius: 24px;
+            margin: 15px 0;
+       
+        }
+        ul{
+            li{
+                position: relative;
+                padding-left: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 10px;
+                    height: 2px;
+                    background-color: #1DA547;
+
+                }
+            }
+        }
+    }
+}
+
+.date{
+    background-color: #fff;
+    padding-bottom: 75px;
+    padding-top: 30px;
+    &-main{
+        background-color: #023A18;
+        text-align: center;
+        padding: 56px 100px;
+        border-radius: 24px;
+        position: relative;
+        z-index: 1;
+        &::before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url(../img/hizmet-bg.png);
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+        p{
+            color: #fff;
+            margin-top: 24px;
+        }
+        a{
+            margin-top: 48px;
+        }
+    }
+}
+
+.title{
+    padding-left: 0!important;
+    span{
+        font-weight: bold;
+    }
+    &::before{
+        display: none;
+    }
+}

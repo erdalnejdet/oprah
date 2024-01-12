@@ -1,0 +1,111 @@
+@media screen and (max-width: 976px) {
+    h1{
+        font-size: 42px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    header{
+        padding: 15px;
+    }
+    .main{
+        padding-top: 50px;
+        &-img{
+            margin-top: 35px;
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+    .psikolog{
+        padding: 35px 0;
+        &-box{
+            &::before{
+                width: 100%;
+            }
+        }
+        &-main{
+            margin-bottom: 36px;
+            gap: 35px;
+        }
+    }
+    .blog{
+        padding: 35px 0;
+        &-main{
+            gap: 35px;
+            margin-bottom: 36px;
+
+        }
+    }
+    .blog-slider{
+        padding:0 15px;
+    }
+    .blog-slider-pagination{
+        padding-top: 33px;
+        margin-bottom: 50px;
+    }
+    .services{
+        padding: 35px 0;
+        &-box{
+            padding: 25px;
+            &-img{
+                bottom: 15px;
+            }
+        }
+    }
+    footer{
+        a{
+          img{
+            margin: 15px 0;
+          }
+        }
+        p{
+            padding-bottom: 25px;
+        }
+        ul{
+            margin-top: 30px;
+        }
+    }
+    .counter{
+        &-box{
+            margin: 20px auto;
+            display: flex;
+        }
+    }
+    .sub-main{
+        padding-top: 0;
+    }
+    .sub-bg{
+        border-radius: 0;
+        padding: 24px;
+        &::before{
+            top: 0;
+        }
+    }
+    .date{
+        &-main{
+            padding: 30px;
+        }
+    }
+    .padding{
+        padding: 25px;
+    }
+    .psikolog-content{
+        text-align: center;
+    }
+.psikolog-tag{
+    justify-content: center;
+    display: flex;
+   
+    
+}
+.psikolog-img{
+    margin-bottom: 10px;
+}
+.psikolog-button{
+    margin-top: 20px;
+}
+    }
