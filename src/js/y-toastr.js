@@ -316,3 +316,39 @@ $('.vizyon-tab li').click(function(){
 });
 
 
+
+$(document).ready(function () {
+  var boxtest = $('.box-text');  
+  function calculateTotalScore() {
+      let totalScore = 0;
+
+      for (let i = 0; i < 5; i++) {
+          const selectedValue = $('input[name=' + i + ']:checked').val();
+
+        
+          totalScore += parseInt(selectedValue);
+      }
+
+      return totalScore;
+  }
+
+
+  $('#kaygi').submit(function (event) {
+    event.preventDefault();
+    const totalScore = calculateTotalScore();
+    let anxietyLevel;
+    if (totalScore >= 0 && totalScore <= 8) {
+        anxietyLevel = "Normal düzeyde anksiyete";
+
+    } else if (totalScore <= 15) {
+        anxietyLevel = "Hafif düzeyde anksiyete";
+        // Replace class addition with setting inner HTML
+        boxtest.html('Your HTML content goes here');
+    } else if (totalScore <= 25) {
+        anxietyLevel = "Orta düzeyde anksiyete";
+    } else {
+        anxietyLevel = "Şiddetli düzeyde anksiyete";
+    }
+    alert("Toplam Puan: " + totalScore + "\nAnksiyete Seviyesi: " + anxietyLevel);
+});
+});
