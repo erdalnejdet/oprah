@@ -305,11 +305,11 @@ $('.vizyon-tab-content').hide();
 $('.vizyon-tab-content:first').show();
 
 // Click function
-$('.vizyon-tab li').click(function(){
+$('.vizyon-tab li').click(function () {
   $('.vizyon-tab li').removeClass('active');
   $(this).addClass('active');
   $('.vizyon-tab-content').hide();
-  
+
   var activeTab = $(this).find('a').attr('href');
   $(activeTab).fadeIn();
   return false;
@@ -318,37 +318,48 @@ $('.vizyon-tab li').click(function(){
 
 
 $(document).ready(function () {
-  var boxtest = $('.box-text');  
   function calculateTotalScore() {
-      let totalScore = 0;
+    let totalScore = 0;
 
-      for (let i = 0; i < 5; i++) {
-          const selectedValue = $('input[name=' + i + ']:checked').val();
+    for (let i = 0; i < 20; i++) {
+      const selectedValue = $('input[name=' + i + ']:checked').val();
 
-        
-          totalScore += parseInt(selectedValue);
-      }
 
-      return totalScore;
+      totalScore += parseInt(selectedValue);
+    }
+
+    return totalScore;
   }
-
 
   $('#kaygi').submit(function (event) {
     event.preventDefault();
     const totalScore = calculateTotalScore();
     let anxietyLevel;
-    if (totalScore >= 0 && totalScore <= 8) {
-        anxietyLevel = "Normal düzeyde anksiyete";
+    let explanation;
 
+    if (totalScore >= 0 && totalScore <= 8) {
+      $('.questions-answer-main').addClass('show');
+      anxietyLevel = "<h2>Normal düzeyde anksiyete</h2>";
+      explanation = "<p>Anksiyete, normal stres yanıtının bir parçasıdır. Günlük stresle karşılaştığımızda belirir ve dikkati artırır. Ancak, aşırı ve sürekli hale geldiğinde sorun oluşturur. İyi yönetim ve destekle kontrol altına alınabilir.</p>";
     } else if (totalScore <= 15) {
-        anxietyLevel = "Hafif düzeyde anksiyete";
-        // Replace class addition with setting inner HTML
-        boxtest.html('Your HTML content goes here');
+      $('.questions-answer-main').addClass('show');
+      anxietyLevel = "<h2>Hafif düzeyde anksiyete</h2>";
+      explanation = "<p>Hafif düzeyde anksiyete, genellikle yönetilebilir ve günlük yaşamı aşırı etkilemez. Endişe ve hafif gerginlik hissi olabilir, ancak bu duygular genellikle geçicidir ve kişisel veya profesyonel faaliyetleri önemli ölçüde engellemez.</p>";
     } else if (totalScore <= 25) {
-        anxietyLevel = "Orta düzeyde anksiyete";
+      $('.questions-answer-main').addClass('show');
+      anxietyLevel = "<h2>Orta düzeyde anksiyete</h2>";
+      explanation = "<p>Orta düzeyde anksiyete, günlük yaşamı etkileyebilen daha belirgin endişe ve gerginlik düzeylerini içerir. Kişi, sosyal etkileşimlerde veya iş performansında zorlanabilir. Ancak, uygun destek ve stratejilerle genellikle başa çıkılabilir.</p>";
     } else {
-        anxietyLevel = "Şiddetli düzeyde anksiyete";
+      $('.questions-answer-main').addClass('show');
+      anxietyLevel = "<h2>Şiddetli düzeyde anksiyete</h2>";
+      explanation = "<p>Şiddetli düzeyde anksiyete, günlük işlevselliği ciddi şekilde etkileyen yoğun endişe ve korku durumudur. Kişi, sürekli gergin ve huzursuz hissedebilir, aşırı terleme, çarpıntı gibi fiziksel belirtiler yaşayabilir. Bu durum sosyal, iş ve kişisel hayatı olumsuz etkileyebilir ve profesyonel yardım gerektirir</p>";
     }
-    alert("Toplam Puan: " + totalScore + "\nAnksiyete Seviyesi: " + anxietyLevel);
+
+    // Set the anxietyLevel and explanation to the element with the class 'questions-answer-main'
+    $('.answer-box').html(anxietyLevel + "<br>" + explanation);
+  });
 });
+
+$('body').click(function () {
+  $('.questions-answer-main').removeClass('show');
 });
