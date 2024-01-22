@@ -362,4 +362,9 @@ $(document).ready(function () {
 
 $('body').click(function () {
   $('.questions-answer-main').removeClass('show');
+
 });
+
+
+
+
