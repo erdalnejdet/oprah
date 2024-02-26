@@ -318,13 +318,14 @@ $('.vizyon-tab li').click(function () {
 
 
 $(document).ready(function () {
+  // Save a reference to the close button element
+  const closeButton = $('.close-button');
+
   function calculateTotalScore() {
     let totalScore = 0;
 
     for (let i = 0; i < 20; i++) {
       const selectedValue = $('input[name=' + i + ']:checked').val();
-
-
       totalScore += parseInt(selectedValue);
     }
 
@@ -340,7 +341,8 @@ $(document).ready(function () {
     if (totalScore >= 0 && totalScore <= 8) {
       $('.questions-answer-main').addClass('show');
       anxietyLevel = "<h2>Normal düzeyde anksiyete</h2>";
-      explanation = "<p>Anksiyete, normal stres yanıtının bir parçasıdır. Günlük stresle karşılaştığımızda belirir ve dikkati artırır. Ancak, aşırı ve sürekli hale geldiğinde sorun oluşturur. İyi yönetim ve destekle kontrol altına alınabilir.</p>";
+      explanation =
+        "<p>Anksiyete, normal stres yanıtının bir parçasıdır. Günlük stresle karşılaştığımızda belirir ve dikkati artırır. Ancak, aşırı ve sürekli hale geldiğinde sorun oluşturur. İyi yönetim ve destekle kontrol altına alınabilir.</p>";
     } else if (totalScore <= 15) {
       $('.questions-answer-main').addClass('show');
       anxietyLevel = "<h2>Hafif düzeyde anksiyete</h2>";
@@ -357,14 +359,14 @@ $(document).ready(function () {
 
     // Set the anxietyLevel and explanation to the element with the class 'questions-answer-main'
     $('.answer-box').html(anxietyLevel + "<br>" + explanation);
+
+    // Append the close button back to the answer-box
+    $('.answer-box').append(closeButton);
   });
 });
+
 
 $('body').click(function () {
   $('.questions-answer-main').removeClass('show');
 
 });
-
-
-
-
